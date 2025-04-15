@@ -5,6 +5,7 @@
 uint badAttempts = 0;
 string userid="admin";
 string password = "password";
+bool loginSuccess = false;
 
 while (badAttempts<3) {
     Console.Write("User ID: ");
@@ -17,5 +18,9 @@ while (badAttempts<3) {
         if(badAttempts>=3) {
             Console.WriteLine("Too many login attempts");
         }
+    } else {
+        loginSuccess=true;
+        break;
     }
 }
+if(loginSuccess) {Console.WriteLine("Login successful!");}
